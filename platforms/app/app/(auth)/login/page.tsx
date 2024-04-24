@@ -15,7 +15,7 @@ export default function LoginPage() {
       <h1 className="mt-6 text-center font-cal text-3xl dark:text-white">
         Platforms Starter Kit
       </h1>
-      <p className="mt-2 text-center text-sm text-stone-600 dark:text-stone-400">
+      <p className="mt-2 text-center text-sm text-red-600 dark:text-stone-400">
         Build multi-tenant applications with custom domains. <br />
         <a
           className="font-medium text-black hover:text-stone-800 dark:text-stone-300 dark:hover:text-stone-100"
