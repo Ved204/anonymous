@@ -1,5 +1,6 @@
 import React from "react"
-const TestPage: React.FC = () => {
+
+export default function TestPage() {
     return (
         <div>
             <p>
@@ -8,5 +9,3 @@ const TestPage: React.FC = () => {
         </div>
     )
 }
-
-export default TestPage;
