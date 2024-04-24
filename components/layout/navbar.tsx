@@ -33,7 +33,7 @@ export default function NavBar({ session }: { session: Session | null }) {
             <p>Precedent</p>
           </Link>
           <div>
-            {session ? (
+            {/* {session ? (
               <UserDropdown session={session} />
             ) : (
               <button
@@ -42,7 +42,10 @@ export default function NavBar({ session }: { session: Session | null }) {
               >
                 Sign In
               </button>
-            )}
+            )} */}
+            <Link href="/SignUp">
+              <button className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">Sign Up</button>
+            </Link>
           </div>
         </div>
       </div>
