@@ -1,6 +1,6 @@
 import React from "react"
 import "./../globals.css";
-
+import signupimg from "/Signup.png";
 const testimg = "https://png.pngtree.com/png-clipart/20230916/original/pngtree-office-icon-illustration-vector-png-image_12265130.png";
 
 export default function SignUp() {
