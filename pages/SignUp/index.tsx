@@ -5,10 +5,10 @@ const testimg = "https://png.pngtree.com/png-clipart/20230916/original/pngtree-o
 
 export default function SignUp() {
     return (
-        <div className="bg-[#212630] h-screen flex items-center justify-center">
-        <div className=" text-center border-2 border-black bg-white min-h-[60vh] max-h-[60vh] max-w-[60vw] min-w-[60vw] rounded-3xl flex">
-          <img src={testimg} alt="ExampleImage" className="w-[50%]"/>
-          <div className=" items-center justify-center w-[50%] h-[59vh] flex mr-[8vw]">
+      <div className="bg-[#212630] h-screen flex items-center justify-center px-5">
+        <div className="text-center border-2 border-black bg-white rounded-3xl flex overflow-hidden max-w-full h-auto my-auto">
+          <img src={testimg} alt="ExampleImage" className="w-full max-w-md h-auto"/>
+          <div className="flex flex-col justify-center p-6 w-full max-w-md mr-8">
             <form className=" text-[#191970] text-center ">
               <div className="p-3 text-lg">
                 <label htmlFor="Fname">Username:</label> <br/>
