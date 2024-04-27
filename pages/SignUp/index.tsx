@@ -1,13 +1,15 @@
 import React from "react"
 import "./../globals.css";
-import signupimg from "/Signup.png";
+import signupimg from "./../../public/Signup.png";
+import Image from 'next/image'
 const testimg = "https://png.pngtree.com/png-clipart/20230916/original/pngtree-office-icon-illustration-vector-png-image_12265130.png";
 
 export default function SignUp() {
     return (
       <div className="bg-[#212630] h-screen flex items-center justify-center px-5">
         <div className="text-center border-2 border-black bg-white rounded-3xl flex overflow-hidden max-w-full h-auto my-auto">
-          <img src={testimg} alt="ExampleImage" className="w-full max-w-md h-auto"/>
+          {/* <img src={testimg} alt="ExampleImage" className="w-full max-w-md h-auto"/> */}
+          <Image src={signupimg} alt="ExampleImage" className="w-full max-w-md h-auto"/>
           <div className="flex flex-col justify-center p-6 w-full max-w-md mr-8">
             <form className=" text-[#191970] text-center ">
               <div className="p-3 text-lg">
