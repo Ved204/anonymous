@@ -34,7 +34,11 @@ export default function NavBar({ session }: { session: Session | null }) {
           </Link>
 
           <Link href="/Topics">
-              <button className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">Threads</button>
+              <button className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">Topics</button>
+          </Link>
+
+          <Link href="/CreatePost">
+              <button className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">New Post</button>
           </Link>          
           <div>
             {/* {session ? (
