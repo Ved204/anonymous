@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
 const plugin = require("tailwindcss/plugin");
+
 
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -11,6 +13,7 @@ module.exports = {
       fontFamily: {
         display: ["var(--font-sf)", "system-ui", "sans-serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
+        Titlepg: ['Dancing Script', 'sans-serif'], 
       },
       animation: {
         // Fade up and down

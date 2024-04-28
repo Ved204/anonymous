@@ -18,7 +18,7 @@ export default function NavBar({ session }: { session: Session | null }) {
         className={`fixed top-0 w-full flex justify-center ${
           scrolled
             ? "  invisible transition1 opacity-0"
-            : "animate-fade-down from-[#323747] to-red-50 "
+            : "animate-fade-down bg-[#1f1d1b] "
         } z-30`}
       >
         <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
@@ -30,7 +30,7 @@ export default function NavBar({ session }: { session: Session | null }) {
               height="30"
               className="mr-2 rounded-sm"
             ></Image>
-            <p>Precedent</p>
+            <p className=" font-Titlepg text-white">Anonymous</p>
           </Link>
 
           <Link href="/Topics">
