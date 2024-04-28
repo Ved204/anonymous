@@ -1,5 +1,6 @@
 import React from "react"
 import "./../globals.css";
+import Navbar from "./../../components/layout/navbar";
 
 // add selector for threads
 // add tags
@@ -9,6 +10,7 @@ export default function CreatePost() {
     return (
         (
             <div className="bg-[#212630] min-h-screen flex items-center justify-center">
+                 <Navbar session={null}/>
               <div className="container bg-[#161a21] md:w-1/2 p-4 rounded-md shadow-lg">
                 <h1 className="text-xl font-bold text-white mb-4">Create a Post</h1>
                     <form className="space-y-4">
