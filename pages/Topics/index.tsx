@@ -3,6 +3,7 @@ import "./../globals.css";
 import Card from "@/components/home/card";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownSection, DropdownItem } from "@nextui-org/dropdown";
 import Form from "platforms/components/form";
+import NavBar from "@/components/layout/navbar";
 
 
 export default function TopicsForm() {
@@ -10,7 +11,8 @@ export default function TopicsForm() {
     
     return(
         
-        
+        <div>
+            <NavBar session={null}/>
         <div className="bg-[#212630] min-h-screen flex items-center justify-center">
               <div className="container bg-[#161a21] md:w-1/2 p-4 rounded-md shadow-lg">
                 <h1 className="text-xl font-bold text-white mb-4">Create a Post</h1>
@@ -50,6 +52,6 @@ export default function TopicsForm() {
                     </form>
                 </div>
             </div>
-        
+        </div>
     )
 }
