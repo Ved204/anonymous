@@ -18,7 +18,7 @@ export default function NavBar({ session }: { session: Session | null }) {
         className={`fixed top-0 w-full flex justify-center ${
           scrolled
             ? "  invisible transition1 opacity-0"
-            : "animate-fade-down bg-[#1f1d1b] "
+            : "animate-fade-down bg-[#19191d] "
         } z-30`}
       >
         <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
@@ -33,12 +33,8 @@ export default function NavBar({ session }: { session: Session | null }) {
             <p className=" font-Titlepg text-white">Anonymous</p>
           </Link>
 
-          <Link href="/Topics">
-              <button className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">Topics</button>
-          </Link>
-
           <Link href="/CreatePost">
-              <button className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">New Post</button>
+              <button className="rounded-full border border-blue-700 bg-blue-700 p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">New Post</button>
           </Link>          
           <div>
             {/* {session ? (
@@ -52,7 +48,7 @@ export default function NavBar({ session }: { session: Session | null }) {
               </button>
             )} */}
             <Link href="/SignUp">
-              <button className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">Sign Up</button>
+              <button className="rounded-full border border-blue-700 bg-blue-700 p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">Sign Up</button>
             </Link>
           </div>
         </div>

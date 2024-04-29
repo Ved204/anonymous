@@ -4,7 +4,8 @@ import Card from "@/components/home/card";
 import Form from "platforms/components/form";
 import NavBar from "@/components/layout/navbar";
 
-export default function TopicsForm() {
+
+export default function TopicsForm(setText: any) {
   //
 
   return (
@@ -42,14 +43,20 @@ export default function TopicsForm() {
           />
         </div>
 
-        <div className="text-right">
-          <button
-            type="submit"
-            className="rounded-full bg-blue-500 px-4 py-1 font-bold text-white hover:bg-blue-700"
-          >
-            Post
-          </button>
-        </div>
+        <div className="flex justify-between w-full">
+                <button
+                  onClick={() => setText('CreatePost')}
+                  className="rounded-full bg-blue-500 px-4 py-1 font-bold text-white hover:bg-blue-700"
+                >
+                  Create New Topic
+                </button>
+                <button
+                  type="submit"
+                  className="rounded-full bg-blue-500 px-4 py-1 font-bold  text-white hover:bg-blue-700"
+                >
+                  Post
+                </button>
+              </div>
       </form>
     </>
   );
