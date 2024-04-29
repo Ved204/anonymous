@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./../globals.css";
 import Navbar from "./../../components/layout/navbar";
 import TopicsForm from "../Topics";
-import { WithContext as ReactTags } from 'react-tag-input'
-
+import { WithContext as ReactTags } from 'react-tag-input';
 
 const predefinedTags: any[] = [
   { id: 'NSFW', text: 'NSFW' },
@@ -12,21 +11,20 @@ const predefinedTags: any[] = [
   // Add more predefined tags as needed
 ];
 
-// add selector for threads
-// select a topic
-
 export default function CreatePost() {
   const [text, setText] = useState<string>("CreatePost");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const handleToggleTag = (tag: string) => {
-    setSelectedTags(prevSelectedTags => {
-      if (prevSelectedTags.includes(tag)) {
-        return prevSelectedTags.filter(t => t !== tag);
-      } else {
-        return [...prevSelectedTags, tag];
-      }
-    });
+    if (selectedTags.includes(tag)) {
+      setSelectedTags(prevSelectedTags => prevSelectedTags.filter(t => t !== tag));
+    } else {
+      setSelectedTags(prevSelectedTags => [...prevSelectedTags, tag]);
+    }
+  };
+
+  const handleTagClick = (tag: string) => {
+    handleToggleTag(tag);
   };
 
   const handleSubmit = (event: any) => {
@@ -62,25 +60,21 @@ export default function CreatePost() {
               <div>
                 <label
                   htmlFor="title"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-sm font-medium text-gray-300 mb-2"
                 >
                   Tags
                 </label>
-                <ReactTags
-                  tags={predefinedTags}
-
-                 handleAddition={() => {}} // No-op function for addition
-                 handleDelete={() => {}} // No-op function for deletion
-                readOnly={true} // Disable adding and removing tags
-                allowDeleteFromEmptyInput={false} // Disable deleting tags
-                 classNames={{
-                 tags: 'flex flex-wrap',
-                 tag: 'mr-2 mb-2 px-4 py-2 rounded cursor-pointer',
-                 tagInputField: 'hidden',
-                 selected: 'bg-red-500',       
-               }}
-               handleTagClick={(index) => handleToggleTag(predefinedTags[index].text)}
-      />
+                <div className="flex flex-wrap">
+                  {predefinedTags.map(tag => (
+                    <div
+                      key={tag.id}
+                      className={`mr-2 mb-2 px-4 py-2 rounded cursor-pointer ${selectedTags.includes(tag.text) ? 'bg-green-500' : 'bg-red-500'}`}
+                      onClick={() => handleTagClick(tag.text)}
+                    >
+                      {tag.text}
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div>
