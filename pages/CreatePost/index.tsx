@@ -56,16 +56,16 @@ export default function CreatePost() {
                   rows={4}
                 ></textarea>
               </div>
-              <div className="text-center">
+              <div className="flex justify-between w-full">
                 <button
                   onClick={changecreation}
-                  className="ml-36 mr-36 rounded-full bg-blue-500 px-4 py-1 font-bold text-white hover:bg-blue-700"
+                  className="rounded-full bg-blue-500 px-4 py-1 font-bold text-white hover:bg-blue-700"
                 >
                   Create New Topic
                 </button>
                 <button
                   type="submit"
-                  className="ml-36 mr-36 rounded-full bg-blue-500 px-4 py-1 font-bold  text-white hover:bg-blue-700"
+                  className="rounded-full bg-blue-500 px-4 py-1 font-bold  text-white hover:bg-blue-700"
                 >
                   Post
                 </button>
