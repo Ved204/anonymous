@@ -68,7 +68,7 @@ export default function CreatePost() {
                   {predefinedTags.map(tag => (
                     <div
                       key={tag.id}
-                      className={`mr-2 mb-2 px-4 py-2 rounded cursor-pointer ${selectedTags.includes(tag.text) ? 'bg-green-500' : 'bg-red-500'}`}
+                      className={`mr-2 px-4 h-8 my-auto rounded-2xl cursor-pointer p-1 text-white  ${selectedTags.includes(tag.text) ? 'bg-green-800 border-black border border-1' : 'bg-[#787272] brightness-50 border border-1 border-black'}`}
                       onClick={() => handleTagClick(tag.text)}
                     >
                       {tag.text}
