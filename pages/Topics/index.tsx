@@ -48,7 +48,7 @@ export default function TopicsForm(setText: any) {
                   onClick={() => setText('CreatePost')}
                   className="rounded-full bg-blue-500 px-4 py-1 font-bold text-white hover:bg-blue-700"
                 >
-                  Create New Topic
+                  Create New Post
                 </button>
                 <button
                   type="submit"

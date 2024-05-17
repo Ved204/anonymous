@@ -28,6 +28,22 @@ app.post('/signup', async (req, res) => {
   }
 });
 
+app.post('/createpost', async (req, res) => {
+  const { title, content } = req.body;
+  
+  try {
+    const post = await prisma.post.create({
+      data: {
+        title,
+        content
+      },
+    });
+    res.status(201).json([post]);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

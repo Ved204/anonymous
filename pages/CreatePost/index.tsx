@@ -12,6 +12,23 @@ const predefinedTags: any[] = [
 ];
 
 export default function CreatePost() {
+
+  const [formData, setFormData] = useState({
+    title: '',
+    content: ''
+  });
+
+  const handleChange = (e : any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+
+
+  
+
   const [text, setText] = useState<string>("CreatePost");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
@@ -27,8 +44,25 @@ export default function CreatePost() {
     handleToggleTag(tag);
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
+    
+    const response = await fetch('http://localhost:8000/createpost', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: formData.title,
+        content: formData.content
+      })
+    });
+
+    if (response.ok) {
+      alert('Post Created successfully');
+    } else {
+      alert('Error Creating the post');
+    }
     console.log('Selected tags:', selectedTags);
   };
 
@@ -41,7 +75,7 @@ export default function CreatePost() {
             <h1 className="mb-4 text-xl font-bold text-white">
               Create a New Post
             </h1>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="title"
@@ -54,6 +88,7 @@ export default function CreatePost() {
                   name="title"
                   id="title"
                   className="mt-1 block w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-white shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+                  required onChange={handleChange} value={formData.title}
                 />
               </div>
 
@@ -89,6 +124,7 @@ export default function CreatePost() {
                   id="content"
                   className="mt-1 block w-full rounded-md border border-gray-700 bg-gray-800 px-3 py-2 text-white shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
                   rows={4}
+                  required onChange={handleChange} value={formData.content}
                 ></textarea>
               </div>
               <div className="flex justify-between w-full">
@@ -96,7 +132,7 @@ export default function CreatePost() {
                   onClick={() => setText('CreateTopic')}
                   className="rounded-full bg-blue-500 px-4 py-1 font-bold text-white hover:bg-blue-700"
                 >
-                  Create New Post
+                  Create New Topic
                 </button>
                 <button
                   type="submit"
@@ -113,4 +149,4 @@ export default function CreatePost() {
       </div>
     </div>
   );
-}
+};

@@ -18,6 +18,13 @@ model User {
   password String
 }
 
+model Post {
+id        Int       @id @default(autoincrement())
+title     String 
+content   String    
+}
+
+
 model VerificationToken {
   identifier String
   token      String   @unique
