@@ -29,13 +29,15 @@ app.post('/signup', async (req, res) => {
 });
 
 app.post('/createpost', async (req, res) => {
-  const { title, content } = req.body;
-  
+  const { title, tags, content } = req.body;
+  tags = tags.toString();
+  console.log(tags);
   try {
     const post = await prisma.post.create({
       data: {
         title,
-        content
+        tags,
+        content,
       },
     });
     res.status(201).json([post]);

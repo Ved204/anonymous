@@ -15,6 +15,7 @@ export default function CreatePost() {
 
   const [formData, setFormData] = useState({
     title: '',
+    tags: [],
     content: ''
   });
 
@@ -25,9 +26,6 @@ export default function CreatePost() {
     });
   };
 
-
-
-  
 
   const [text, setText] = useState<string>("CreatePost");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);

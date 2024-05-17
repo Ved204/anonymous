@@ -22,7 +22,8 @@ model User {
 
 model Post {
 id        Int       @id @default(autoincrement())
-title     String 
+title     String
+tags      String 
 content   String    
 }
 
