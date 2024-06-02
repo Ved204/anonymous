@@ -6,8 +6,11 @@ import NavBar from "@/components/layout/navbar";
 
 
 export default function TopicsForm(setText: any) {
-  //
 
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+  }
+  
   return (
     <>
       <h1 className="mb-4 text-xl font-bold text-white">Create a New Topic</h1>
